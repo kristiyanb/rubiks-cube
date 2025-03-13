@@ -1,0 +1,192 @@
+:root {
+  --size: 300px;
+  --z: 150px;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  min-height: 60vh;
+}
+
+.container {
+  margin-top: 20px;
+  perspective: 1000px;
+  width: var(--size);
+  height: var(--size);
+}
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.85s cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+
+.face {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  line-height: var(--size);
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: #fff;
+}
+
+.front {
+  transform: translateZ(var(--z));
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(var(--z));
+}
+
+.up {
+  transform: rotateX(90deg) translateZ(var(--z));
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(var(--z));
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(var(--z));
+}
+
+.down {
+  transform: rotateX(90deg) translateZ(-150px);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.control {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.25rem;
+  background-color: #4caf50;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  font-size: 18px;
+}
+
+.control:hover {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #4caf50;
+}
+
+.row {
+  display: flex;
+}
+
+.node {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.white {
+  background-color: white;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin: auto;
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.25rem;
+  background-color: lightgrey;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  font-size: 18px;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px grey;
+}
+
+.rotate-right:focus+.cube {
+  transform: rotateY(-45px);
+  transition: all 2s;
+  -webkit-transform: rotateY(-45deg);
+  -ms-transform: rotateY(-45deg);
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.25rem;
+  background-color: lightgrey;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  font-size: 18px;
+}
+
+.reset-btn:hover {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px grey;
+}
+
+.expanded-view {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.expanded-cube-row {
+  display: flex;
+}
+
+.offset-left {
+  margin-left: 305px;
+}
